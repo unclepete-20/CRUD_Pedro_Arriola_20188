@@ -35,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
                 if (mVideoGame != null) {
                     bindingActivityDetail.nameTextView.text = mVideoGame.name.toString()
                     bindingActivityDetail.dateTextView.text = mVideoGame.date.toString()
-                    bindingActivityDetail.priceTextView.text = mVideoGame.price.toString() + " $"
+                    bindingActivityDetail.priceTextView.text = "Q" + mVideoGame.price.toString()
                     bindingActivityDetail.descriptionTextView.text = mVideoGame.description.toString()
                     Glide.with(view)
                         .load(mVideoGame.url.toString())

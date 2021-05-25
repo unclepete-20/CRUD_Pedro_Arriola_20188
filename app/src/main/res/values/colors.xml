@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black_200">#aaaaaa</color>
+    <color name="black_200">#777373</color>
     <color name="black_500">#303231</color>
     <color name="black_700">#FF000000</color>
-    <color name="orange_200">#ff8e4b</color>
+    <color name="orange_200">#ff43d7dc</color>
     <color name="orange_500">#79DCF4</color>
-    <color name="plum_700">#C6F68D</color>
+    <color name="plum_700">#463E5A</color>
     <color name="purple_500">#663399</color>
     <color name="teal_200">#ff3cecb3</color>
     <color name="teal_500">#ff43d7dc</color>

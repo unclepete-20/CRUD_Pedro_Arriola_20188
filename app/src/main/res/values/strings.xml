@@ -3,10 +3,10 @@
     <string name="title_main">Lista de videjuegos</string>
     <string name="sub_title_main">Los mejores del 2021</string>
     <string name="all">TODO</string>
-    <string name="name">Ori and the Will of the Wisps</string>
+    <string name="name">Nombre del Videojuego</string>
     <string name="date">10 / 03 / 2021</string>
-    <string name="price">40 $</string>
-    <string name="description">Ori and the Will of the Wisps es un videojuego del género aventura-plataforma y Metroidvania desarrollado por Moon Studios y publicado por Xbox Game Studios para Microsoft Windows, Xbox One y Nintendo Switch. Es una continuación del título de 2015 Ori and the Blind Forest y fue anunciado durante el E3 2017.</string>
+    <string name="price">40 Q</string>
+    <string name="description">EXAMPLE DESCRIPTION</string>
     <string name="name_form">Nombre</string>
     <string name="date_form">Fecha</string>
     <string name="price_form">Precio</string>
