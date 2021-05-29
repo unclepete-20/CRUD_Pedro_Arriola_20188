@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">CRUD-Pedro-Arriola-20188</string>
-    <string name="title_main">Lista de videjuegos</string>
-    <string name="sub_title_main">Los mejores del 2021</string>
+    <string name="title_main">Lista de Productos</string>
     <string name="all">TODO</string>
-    <string name="name">Nombre del Videojuego</string>
+    <string name="name">Nombre del Producto</string>
     <string name="date">10 / 03 / 2021</string>
     <string name="price">40 Q</string>
     <string name="description">EXAMPLE DESCRIPTION</string>

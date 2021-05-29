@@ -31,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val mVideoGame:VideoGame? = dataSnapshot.getValue(VideoGame::class.java)
+                val mVideoGame:Products? = dataSnapshot.getValue(Products::class.java)
                 if (mVideoGame != null) {
                     bindingActivityDetail.nameTextView.text = mVideoGame.name.toString()
                     bindingActivityDetail.dateTextView.text = mVideoGame.date.toString()

@@ -37,15 +37,15 @@ class EditActivity : AppCompatActivity() {
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val mVideoGame: VideoGame? = dataSnapshot.getValue(VideoGame::class.java)
-                if (mVideoGame != null) {
+                val mProducts: Products? = dataSnapshot.getValue(Products::class.java)
+                if (mProducts != null) {
 
-                    bindingActivityEdit.nameEditText.text = Editable.Factory.getInstance().newEditable(mVideoGame.name)
-                    bindingActivityEdit.dateEditText.text = Editable.Factory.getInstance().newEditable(mVideoGame.date)
-                    bindingActivityEdit.priceEditText.text = Editable.Factory.getInstance().newEditable(mVideoGame.price)
-                    bindingActivityEdit.descriptionEditText.text = Editable.Factory.getInstance().newEditable(mVideoGame.description)
+                    bindingActivityEdit.nameEditText.text = Editable.Factory.getInstance().newEditable(mProducts.name)
+                    bindingActivityEdit.dateEditText.text = Editable.Factory.getInstance().newEditable(mProducts.date)
+                    bindingActivityEdit.priceEditText.text = Editable.Factory.getInstance().newEditable(mProducts.price)
+                    bindingActivityEdit.descriptionEditText.text = Editable.Factory.getInstance().newEditable(mProducts.description)
 
-                    imageUrl = mVideoGame.url.toString()
+                    imageUrl = mProducts.url.toString()
 
                     if(fileUri==null){
                         Glide.with(view)
@@ -73,12 +73,12 @@ class EditActivity : AppCompatActivity() {
             val videoGameReference : StorageReference = folder.child("img$key")
 
             if(fileUri==null){
-                val mVideoGame = VideoGame(name, date, price, description, imageUrl)
+                val mVideoGame = Products(name, date, price, description, imageUrl)
                 myRef.setValue(mVideoGame)
             } else {
                 videoGameReference.putFile(fileUri!!).addOnSuccessListener {
                     videoGameReference.downloadUrl.addOnSuccessListener { uri ->
-                        val mVideoGame = VideoGame(name, date, price, description, uri.toString())
+                        val mVideoGame = Products(name, date, price, description, uri.toString())
                         myRef.setValue(mVideoGame)
                     }
                 }

@@ -34,12 +34,12 @@ class AddActivity : AppCompatActivity() {
             val videoGameReference : StorageReference = folder.child("img$key")
 
             if(fileUri==null){
-                val mVideoGame = VideoGame(name, date, price, description)
+                val mVideoGame = Products(name, date, price, description)
                 myRef.child(key).setValue(mVideoGame)
             } else {
                 videoGameReference.putFile(fileUri!!).addOnSuccessListener {
                     videoGameReference.downloadUrl.addOnSuccessListener { uri ->
-                        val mVideoGame = VideoGame(name, date, price, description, uri.toString())
+                        val mVideoGame = Products(name, date, price, description, uri.toString())
                         myRef.child(key).setValue(mVideoGame)
                     }
                 }

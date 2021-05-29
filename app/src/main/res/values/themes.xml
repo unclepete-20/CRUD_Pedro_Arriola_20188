@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Gamestore" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/plum_700</item>
-        <item name="colorPrimaryVariant">@color/plum_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">#8EFBD5</item>
+        <item name="colorPrimaryVariant">#13F393</item>
+        <item name="colorOnPrimary">#A1EDCC</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/orange_200</item>
         <item name="colorSecondaryVariant">@color/teal_200</item>
@@ -16,7 +16,7 @@
 
     <style name="Theme.DetailApplication" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/plum_700</item>
+        <item name="colorPrimary">#47EDA0</item>
         <item name="colorPrimaryVariant">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

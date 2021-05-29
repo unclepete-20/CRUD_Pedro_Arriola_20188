@@ -59,7 +59,7 @@
             android:layout_marginBottom="80dp"
             app:layoutManager="LinearLayoutManager"
             tools:context=".MainActivity"
-            tools:listitem="@layout/video_game_content">
+            tools:listitem="@layout/product_content">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -97,8 +97,8 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/pngaaa_com_661438"
-        tools:layout_editor_absoluteY="32dp" />
+        app:srcCompat="@drawable/cart"
+        tools:layout_editor_absoluteY="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

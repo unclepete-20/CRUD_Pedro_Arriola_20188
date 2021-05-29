@@ -18,7 +18,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var messagesListener: ValueEventListener
 
     private val database = Firebase.database
-    private val listVideoGames:MutableList<VideoGame> = ArrayList()
+    private val listProducts:MutableList<Products> = ArrayList()
     private val myRef = database.getReference("game")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             v.context.startActivity(intent)
         }
 
-        listVideoGames.clear()
+        listProducts.clear()
         setupRecyclerView(bindingActivityMain.recyclerView)
 
     }
@@ -53,18 +52,18 @@ class MainActivity : AppCompatActivity() {
         messagesListener = object : ValueEventListener {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                listVideoGames.clear()
+                listProducts.clear()
                 dataSnapshot.children.forEach { resp ->
-                    val mVideoGame =
-                        VideoGame(resp.child("name").value as String?,
+                    val mProduct =
+                        Products(resp.child("name").value as String?,
                             resp.child("date").value as String?,
                             resp.child("price").value as String?,
                             resp.child("description").value as String?,
                             resp.child("url").value as String?,
                             resp.key)
-                    mVideoGame.let { listVideoGames.add(it) }
+                    mProduct.let { listProducts.add(it) }
                 }
-                recyclerView.adapter = VideogameViewAdapter(listVideoGames)
+                recyclerView.adapter = VideogameViewAdapter(listProducts)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -76,12 +75,12 @@ class MainActivity : AppCompatActivity() {
         deleteSwipe(recyclerView)
     }
 
-    class VideogameViewAdapter(private val values: List<VideoGame>) :
+    class VideogameViewAdapter(private val values: List<Products>) :
         RecyclerView.Adapter<VideogameViewAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.video_game_content, parent, false)
+                .inflate(R.layout.product_content, parent, false)
             return ViewHolder(view)
         }
 
@@ -132,11 +131,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val imageFirebaseStorage = FirebaseStorage.getInstance().reference.child("game/img"+listVideoGames[viewHolder.adapterPosition].key)
+                val imageFirebaseStorage = FirebaseStorage.getInstance().reference.child("game/img"+listProducts[viewHolder.adapterPosition].key)
                 imageFirebaseStorage.delete()
 
-                listVideoGames[viewHolder.adapterPosition].key?.let { myRef.child(it).setValue(null) }
-                listVideoGames.removeAt(viewHolder.adapterPosition)
+                listProducts[viewHolder.adapterPosition].key?.let { myRef.child(it).setValue(null) }
+                listProducts.removeAt(viewHolder.adapterPosition)
 
                 recyclerView.adapter?.notifyItemRemoved(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyDataSetChanged()
