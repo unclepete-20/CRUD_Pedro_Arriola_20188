@@ -1,7 +1,7 @@
 # CRUD_Pedro_Arriola_20188
 En este repositorio se encuentra el proyecto donde se implementa el CRUD.
 
-Se realizo una aplicación donde se utilizan lista para almacenar registros y se optó por una temática de videojuegos para realizarla.
+Se realizo una aplicación donde se utilizan lista para almacenar registros y se optó por una temática de productos para realizarla.
 Para poder implementar las operaciones básicas de CRUD, se utilizó la plataforma de Firebase para poder cumplir con los objetivos y también poder manipular los datos ingresados.
 
 Para poder realizar las funciones especificadas, se deben realizar las siguientes acciones:
